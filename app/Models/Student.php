@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-
-    protected $primaryKey = 'document';
-    public $incrementing = false;
-    protected $keyType = 'bigInteger';
 }
