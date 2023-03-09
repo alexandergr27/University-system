@@ -1,8 +1,8 @@
 <template>
   <div class="title">
-    <h2>{{ title }}</h2>
+    <h4 style="margin-top: 32px;">{{ title }}</h4>
   </div>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped" style="margin-top: 16px;">
     <thead>
       <tr>
         <td>Document</td>
@@ -35,7 +35,7 @@
 export default {
   data() {
     return {
-      title: "Student Management Component",
+      title: "List of Students",
     };
   },
 };

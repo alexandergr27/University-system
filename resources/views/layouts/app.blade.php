@@ -13,7 +13,10 @@
 <body>
     <div id="app">
         <main class="main">
-            @yield('content')
+            <menu-component></menu-component>
+            <div class="container-fluid">
+                @yield('content')
+            </div>
         </main>
     </div>
     @vite('resources/js/app.js')
