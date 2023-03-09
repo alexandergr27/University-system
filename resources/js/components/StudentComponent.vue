@@ -17,26 +17,40 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>123456789</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>1990-05-02</td>
-        <td>johndoe@example.com</td>
-        <td>1234567</td>
-        <td>47 ST</td>
-        <td>true</td>
+      <tr v-for="student in students">
+        <td>{{ student.document }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.date_birth }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.phone_number }}</td>
+        <td>{{ student.address }}</td>
+        <td>{{ student.is_active }}</td>
       </tr>
     </tbody>
   </table>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       title: "List of Students",
+      students: []
     };
   },
+  created() {
+    this.getStudents()
+  },
+  methods: {
+    getStudents() {
+      axios.get("http://localhost:8000/api/students").then((response) => {
+        this.students = response.data
+        console.log(this.students)
+      })
+    }
+  }
 };
 </script>
